@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Thumbnail Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@400;700&family=Bebas+Neue&family=Anton&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-r from-yellow-500 to-orange-500 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-xl font-bold text-gray-800">Content Tools</a>
+                <div class="space-x-4">
+                    <a href="title-generator.html" class="text-gray-600 hover:text-red-600">Title Generator</a>
+                    <a href="tag-generator.html" class="text-gray-600 hover:text-blue-600">Tag Generator</a>
+                    <a href="description-generator.html" class="text-gray-600 hover:text-green-600">Description Generator</a>
+                    <a href="thumbnail-generator.html" class="text-yellow-600 font-semibold">Thumbnail Generator</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl p-6">
+            <h1 class="text-4xl font-bold text-center mb-2 text-yellow-600">
+                Thumbnail Generator
+            </h1>
+            <p class="text-center text-gray-600 mb-8">Create eye-catching thumbnails for your videos</p>
+            
+            <div class="space-y-6">
+                <!-- Canvas Editor -->
+                <div class="relative aspect-video bg-gray-100 rounded-lg overflow-hidden">
+                    <canvas id="thumbnailCanvas" class="w-full"></canvas>
+                </div>
+
+                <!-- Main Controls -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Text Controls -->
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-lg">Text Settings</h3>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Text Content</label>
+                            <input type="text" id="textInput" 
+                                class="w-full px-3 py-2 border rounded-lg"
+                                placeholder="Enter text...">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Text Color</label>
+                            <input type="color" id="textColor" class="w-full h-10">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Font Size</label>
+                            <input type="range" id="fontSize" min="12" max="120" value="48" class="w-full">
+                            <div class="text-sm text-gray-600 mt-1">Size: <span id="fontSizeValue">48</span>px</div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Font Family</label>
+                            <select id="fontFamily" class="w-full px-3 py-2 border rounded-lg">
+                                <option value="Arial">Arial</option>
+                                <option value="Impact">Impact</option>
+                                <option value="Oswald">Oswald</option>
+                                <option value="Montserrat">Montserrat</option>
+                                <option value="Bebas Neue">Bebas Neue</option>
+                                <option value="Anton">Anton</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Text Style</label>
+                            <div class="grid grid-cols-4 gap-2">
+                                <button onclick="toggleTextStyle('bold')" id="boldBtn" 
+                                    class="p-2 bg-gray-100 rounded hover:bg-gray-200 font-bold">B</button>
+                                <button onclick="toggleTextStyle('italic')" id="italicBtn"
+                                    class="p-2 bg-gray-100 rounded hover:bg-gray-200 italic">I</button>
+                                <button onclick="toggleTextStyle('stroke')" id="strokeBtn"
+                                    class="p-2 bg-gray-100 rounded hover:bg-gray-200">S</button>
+                                <button onclick="toggleTextStyle('shadow')" id="shadowBtn"
+                                    class="p-2 bg-gray-100 rounded hover:bg-gray-200">🌗</button>
+                            </div>
+                        </div>
+                        <button onclick="addText()" 
+                            class="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                            Add Text
+                        </button>
+                    </div>
+
+                    <!-- Image Controls -->
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-lg">Image Settings</h3>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Background Image</label>
+                            <input type="file" id="imageInput" accept="image/*" class="hidden">
+                            <button onclick="document.getElementById('imageInput').click()" 
+                                class="w-full px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+                                Choose Image
+                            </button>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Emoji</label>
+                            <div class="grid grid-cols-4 gap-2">
+                                <button onclick="addEmoji('🎮')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">🎮</button>
+                                <button onclick="addEmoji('📱')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">📱</button>
+                                <button onclick="addEmoji('⭐')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">⭐</button>
+                                <button onclick="addEmoji('🔥')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">🔥</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Templates -->
+                <div class="space-y-4">
+                    <h3 class="font-bold text-lg">Quick Templates</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <!-- Gaming Template -->
+                        <button onclick="useTemplate('gaming')" 
+                            class="p-4 bg-gradient-to-r from-red-500 to-purple-500 text-white rounded-lg hover:opacity-90">
+                            <div class="text-3xl mb-2">🎮</div>
+                            Gaming
+                        </button>
+
+                        <!-- Tech Template -->
+                        <button onclick="useTemplate('tech')" 
+                            class="p-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg hover:opacity-90">
+                            <div class="text-3xl mb-2">📱</div>
+                            Tech Review
+                        </button>
+
+                        <!-- Cooking Template -->
+                        <button onclick="useTemplate('cooking')" 
+                            class="p-4 bg-gradient-to-r from-red-400 to-yellow-400 text-white rounded-lg hover:opacity-90">
+                            <div class="text-3xl mb-2">👨‍🍳</div>
+                            Cooking
+                        </button>
+
+                        <!-- Fitness Template -->
+                        <button onclick="useTemplate('fitness')" 
+                            class="p-4 bg-gradient-to-r from-indigo-600 to-cyan-500 text-white rounded-lg hover:opacity-90">
+                            <div class="text-3xl mb-2">💪</div>
+                            Fitness
+                        </button>
+
+                        <!-- Travel Template -->
+                        <button onclick="useTemplate('travel')" 
+                            class="p-4 bg-gradient-to-r from-sky-500 to-teal-500 text-white rounded-lg hover:opacity-90">
+                            <div class="text-3xl mb-2">✈️</div>
+                            Travel
+                        </button>
+
+                        <!-- Education Template -->
+                        <button onclick="useTemplate('education')" 
+                            class="p-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:opacity-90">
+                            <div class="text-3xl mb-2">📚</div>
+                            Education
+                        </button>
+
+                        <!-- Tutorial Template -->
+                        <button onclick="useTemplate('tutorial')" 
+                            class="p-4 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-lg hover:opacity-90">
+                            <div class="text-3xl mb-2">📝</div>
+                            Tutorial
+                        </button>
+
+                        <!-- Custom Template -->
+                        <button onclick="clearCanvas()" 
+                            class="p-4 bg-gradient-to-r from-gray-600 to-gray-700 text-white rounded-lg hover:opacity-90">
+                            <div class="text-3xl mb-2">✨</div>
+                            Custom
+                        </button>
+
+                        <!-- Bugatti Template -->
+                        <button onclick="useTemplate('bugatti')" 
+                            class="p-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white rounded-lg hover:opacity-90">
+                            <div class="text-3xl mb-2">🏎️</div>
+                            Bugatti
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Add more emoji options -->
+                <div class="mt-4">
+                    <label class="block text-sm font-bold mb-2">Category Emojis</label>
+                    <div class="grid grid-cols-4 md:grid-cols-8 gap-2">
+                        <button onclick="addEmoji('🎮')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">🎮</button>
+                        <button onclick="addEmoji('📱')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">📱</button>
+                        <button onclick="addEmoji('👨‍🍳')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">👨‍🍳</button>
+                        <button onclick="addEmoji('💪')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">💪</button>
+                        <button onclick="addEmoji('✈️')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">✈️</button>
+                        <button onclick="addEmoji('📚')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">📚</button>
+                        <button onclick="addEmoji('⭐')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">⭐</button>
+                        <button onclick="addEmoji('🔥')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">🔥</button>
+                        <button onclick="addEmoji('🎯')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">🎯</button>
+                        <button onclick="addEmoji('🏆')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">🏆</button>
+                        <button onclick="addEmoji('💡')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">💡</button>
+                        <button onclick="addEmoji('🎨')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">🎨</button>
+                        <button onclick="addEmoji('🎵')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">🎵</button>
+                        <button onclick="addEmoji('🎬')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">🎬</button>
+                        <button onclick="addEmoji('🌟')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">🌟</button>
+                        <button onclick="addEmoji('❤️')" class="p-2 bg-gray-100 rounded hover:bg-gray-200">❤️</button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex justify-between">
+                    <button onclick="clearCanvas()" 
+                        class="px-6 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
+                        Clear Canvas
+                    </button>
+                    <button onclick="downloadThumbnail()" 
+                        class="px-6 py-2 bg-yellow-600 text-white rounded hover:bg-yellow-700">
+                        Download Thumbnail
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="thumbnail-generator.js"></script>
+</body>
+</html> 

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Title Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-red-500 to-pink-500 min-h-screen">
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-xl font-bold text-gray-800">Content Tools</a>
+                <div class="space-x-4">
+                    <a href="index.html" class="text-gray-600 hover:text-purple-600">Hashtag Generator</a>
+                    <a href="title-generator.html" class="text-red-600 font-semibold">Title Generator</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-xl p-6">
+            <h1 class="text-4xl font-bold text-center mb-2 text-red-600">
+                YouTube Title Generator
+            </h1>
+            <p class="text-center text-gray-600 mb-8">Create viral, attention-grabbing titles for your videos</p>
+
+            <div class="space-y-6">
+                <!-- Input Section -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Main Topic/Keywords:
+                        </label>
+                        <input type="text" id="mainTopic" 
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                            placeholder="Enter your main topic...">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Target Audience:
+                        </label>
+                        <select id="targetAudience" 
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="general">General Audience</option>
+                            <option value="beginners">Beginners</option>
+                            <option value="advanced">Advanced Users</option>
+                            <option value="professionals">Professionals</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Language:
+                        </label>
+                        <select id="language" 
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="english">English</option>
+                            <option value="hindi">हिंदी</option>
+                            <option value="gujarati">ગુજરાતી</option>
+                            <option value="marathi">मराठी</option>
+                            <option value="tamil">தமிழ்</option>
+                            <option value="telugu">తెలుగు</option>
+                            <option value="bengali">বাংলা</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Title Style:
+                        </label>
+                        <select id="titleStyle" 
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="howto">How-To Tutorial</option>
+                            <option value="listicle">Top 10 List</option>
+                            <option value="review">Review/Comparison</option>
+                            <option value="reaction">Reaction/Experience</option>
+                            <option value="news">News/Update</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Emotion/Tone:
+                        </label>
+                        <select id="emotionTone" 
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                            <option value="exciting">Exciting/Surprising</option>
+                            <option value="educational">Educational</option>
+                            <option value="emotional">Emotional</option>
+                            <option value="funny">Funny/Entertainment</option>
+                            <option value="serious">Serious/Professional</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Ranking Keywords:
+                        </label>
+                        <select id="rankingKeywords" multiple 
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 h-32">
+                            <option value="best">Best</option>
+                            <option value="top">Top Rated</option>
+                            <option value="viral">Viral</option>
+                            <option value="trending">Trending</option>
+                            <option value="ultimate">Ultimate</option>
+                            <option value="complete">Complete</option>
+                            <option value="perfect">Perfect</option>
+                            <option value="professional">Professional</option>
+                            <option value="expert">Expert</option>
+                            <option value="beginners">For Beginners</option>
+                        </select>
+                        <p class="text-sm text-gray-500 mt-1">Hold Ctrl/Cmd to select multiple</p>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            SEO Options:
+                        </label>
+                        <div class="space-y-2">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="includeYear" class="form-checkbox text-red-600" checked>
+                                <span class="ml-2">Include Year (2024)</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="includeNumbers" class="form-checkbox text-red-600" checked>
+                                <span class="ml-2">Include Numbers</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="includeBrackets" class="form-checkbox text-red-600">
+                                <span class="ml-2">Include Brackets [ ]</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="includeEmojis" class="form-checkbox text-red-600" checked>
+                                <span class="ml-2">Include Emojis</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 border-t pt-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Advanced SEO Features</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Keywords Analysis -->
+                        <div class="space-y-4">
+                            <label class="block text-gray-700 text-sm font-bold">
+                                Primary Keyword
+                            </label>
+                            <input type="text" id="primaryKeyword" 
+                                class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                                placeholder="Main keyword...">
+                            
+                            <label class="block text-gray-700 text-sm font-bold">
+                                Secondary Keywords (comma separated)
+                            </label>
+                            <input type="text" id="secondaryKeywords" 
+                                class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                                placeholder="keyword1, keyword2, keyword3...">
+                        </div>
+
+                        <!-- SEO Checklist -->
+                        <div class="space-y-2">
+                            <h4 class="font-bold text-gray-700">SEO Optimization Checklist:</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="includePowerWords" class="form-checkbox text-red-600" checked>
+                                    <span class="ml-2">Include Power Words</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="includeQuestion" class="form-checkbox text-red-600">
+                                    <span class="ml-2">Add Question Format</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="includeLSI" class="form-checkbox text-red-600" checked>
+                                    <span class="ml-2">Use LSI Keywords</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" id="includeMetrics" class="form-checkbox text-red-600">
+                                    <span class="ml-2">Include Metrics/Numbers</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SEO Analysis Results -->
+                    <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                        <h4 class="font-bold text-lg text-gray-800 mb-3">SEO Analysis</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="p-3 bg-white rounded-lg shadow">
+                                <div class="text-sm font-semibold text-gray-600">Keyword Density</div>
+                                <div id="keywordDensity" class="text-lg font-bold text-red-600">0%</div>
+                            </div>
+                            <div class="p-3 bg-white rounded-lg shadow">
+                                <div class="text-sm font-semibold text-gray-600">Readability Score</div>
+                                <div id="readabilityScore" class="text-lg font-bold text-red-600">0/100</div>
+                            </div>
+                            <div class="p-3 bg-white rounded-lg shadow">
+                                <div class="text-sm font-semibold text-gray-600">Click-Through Rate</div>
+                                <div id="ctrScore" class="text-lg font-bold text-red-600">0%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LSI Keywords Suggestions -->
+                    <div class="mt-4 p-4 bg-white rounded-lg shadow">
+                        <h4 class="font-bold text-gray-800 mb-2">LSI Keywords Suggestions:</h4>
+                        <div id="lsiKeywords" class="flex flex-wrap gap-2">
+                            <!-- LSI keywords will be added here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <button onclick="generateTitles()" 
+                        class="px-8 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition transform hover:scale-105">
+                        Generate Titles
+                    </button>
+                </div>
+
+                <!-- Results Section -->
+                <div class="mt-8">
+                    <div id="loadingIndicator" class="hidden">
+                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-red-700 mx-auto"></div>
+                    </div>
+                    
+                    <div id="titleResults" class="hidden space-y-4">
+                        <h3 class="font-bold text-xl text-gray-800 mb-4">Generated Titles:</h3>
+                        <div id="titlesList" class="space-y-3">
+                            <!-- Titles will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">SEO Preview:</h3>
+                    <div id="seoPreview" class="space-y-2">
+                        <div class="text-sm">
+                            <span class="font-semibold">Title Length:</span>
+                            <span id="titleLength">0/100</span> characters
+                        </div>
+                        <div class="text-sm">
+                            <span class="font-semibold">Keywords Used:</span>
+                            <span id="keywordsUsed">-</span>
+                        </div>
+                        <div class="text-sm">
+                            <span class="font-semibold">SEO Score:</span>
+                            <span id="seoScore" class="px-2 py-1 rounded text-white bg-gray-500">0/100</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="title-generator.js"></script>
+</body>
+</html> 

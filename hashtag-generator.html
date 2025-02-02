@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Hashtag Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-purple-500 to-pink-500 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-xl font-bold text-gray-800">Content Tools</a>
+                <div class="space-x-4">
+                    <a href="title-generator.html" class="text-gray-600 hover:text-red-600">Title Generator</a>
+                    <a href="tag-generator.html" class="text-gray-600 hover:text-blue-600">Tag Generator</a>
+                    <a href="hashtag-generator.html" class="text-purple-600 font-semibold">Hashtag Generator</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-xl p-6">
+            <h1 class="text-4xl font-bold text-center mb-2 text-purple-600">
+                Hashtag Generator
+            </h1>
+            <p class="text-center text-gray-600 mb-8">Create trending hashtags for your social media posts</p>
+
+            <div class="space-y-6">
+                <!-- Input Section -->
+                <div>
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Post Topic or Keywords:
+                    </label>
+                    <input type="text" id="postTopic" 
+                        class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                        placeholder="Enter your topic...">
+                </div>
+
+                <!-- Platform Selection -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Platform:
+                        </label>
+                        <select id="platform" 
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <option value="youtube">YouTube</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="tiktok">TikTok</option>
+                            <option value="linkedin">LinkedIn</option>
+                            <option value="facebook">Facebook</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Industry:
+                        </label>
+                        <select id="industry" 
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <option value="tech">Technology</option>
+                            <option value="gaming">Gaming</option>
+                            <option value="education">Education</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="music">Music</option>
+                            <option value="howto">How-To & Tutorials</option>
+                            <option value="vlog">Vlogging</option>
+                            <option value="review">Reviews</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Language Selection -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">
+                            Language:
+                        </label>
+                        <select id="language" 
+                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <option value="english">English</option>
+                            <option value="hindi">हिंदी</option>
+                            <option value="gujarati">ગુજરાતી</option>
+                            <option value="marathi">मराठी</option>
+                            <option value="tamil">தமிழ்</option>
+                            <option value="telugu">తెలుగు</option>
+                            <option value="bengali">বাংলা</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Hashtag Options -->
+                <div class="space-y-4">
+                    <h3 class="font-bold text-lg text-gray-700">Hashtag Options:</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-2">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="includeTrending" class="form-checkbox text-purple-600" checked>
+                                <span class="ml-2">Include Trending</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="includeNiche" class="form-checkbox text-purple-600" checked>
+                                <span class="ml-2">Include Niche</span>
+                            </label>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="includeLocation" class="form-checkbox text-purple-600">
+                                <span class="ml-2">Include Location</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="includeBranding" class="form-checkbox text-purple-600" checked>
+                                <span class="ml-2">Include Branding</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Hashtag Count Slider -->
+                    <div class="space-y-2">
+                        <label class="block text-gray-700 text-sm font-bold">
+                            Number of Hashtags: <span id="hashtagCount">20</span>
+                        </label>
+                        <input type="range" id="hashtagSlider" min="5" max="30" value="20"
+                            class="w-full h-2 bg-purple-200 rounded-lg appearance-none cursor-pointer">
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <button onclick="generateHashtags()" 
+                        class="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition transform hover:scale-105">
+                        Generate Hashtags
+                    </button>
+                </div>
+
+                <!-- Results Section -->
+                <div class="mt-8">
+                    <div id="loadingIndicator" class="hidden">
+                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-700 mx-auto"></div>
+                    </div>
+                    
+                    <div id="hashtagResults" class="hidden space-y-4">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-bold text-xl text-gray-800">Generated Hashtags:</h3>
+                            <button onclick="copyAllHashtags()" 
+                                class="px-4 py-2 bg-purple-100 text-purple-600 rounded-lg hover:bg-purple-200 transition">
+                                Copy All
+                            </button>
+                        </div>
+                        <div id="hashtagsList" class="flex flex-wrap gap-2">
+                            <!-- Hashtags will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hashtag Analytics -->
+                <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="font-bold text-lg text-gray-800 mb-3">Hashtag Analytics</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-3 bg-white rounded-lg shadow">
+                            <div class="text-sm font-semibold text-gray-600">Reach Potential</div>
+                            <div id="reachPotential" class="text-lg font-bold text-purple-600">0</div>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg shadow">
+                            <div class="text-sm font-semibold text-gray-600">Trending Score</div>
+                            <div id="trendingScore" class="text-lg font-bold text-purple-600">0/100</div>
+                        </div>
+                        <div class="p-3 bg-white rounded-lg shadow">
+                            <div class="text-sm font-semibold text-gray-600">Competition Level</div>
+                            <div id="competitionLevel" class="text-lg font-bold text-purple-600">Low</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trending Hashtags -->
+                <div class="mt-4 p-4 bg-white rounded-lg shadow">
+                    <h4 class="font-bold text-gray-800 mb-2">Currently Trending:</h4>
+                    <div id="trendingHashtags" class="flex flex-wrap gap-2">
+                        <!-- Trending hashtags will be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Component -->
+    <footer class="bg-gray-900 text-white mt-16">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Content Tools</h3>
+                    <p class="text-gray-400">Your all-in-one solution for content creation and optimization</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Tools</h4>
+                    <ul class="space-y-2">
+                        <li><a href="title-generator.html" class="text-gray-400 hover:text-white">Title Generator</a></li>
+                        <li><a href="tag-generator.html" class="text-gray-400 hover:text-white">Tag Generator</a></li>
+                        <li><a href="hashtag-generator.html" class="text-gray-400 hover:text-white">Hashtag Generator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Guides</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Twitter</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">YouTube</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Content Tools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="hashtag-generator.js"></script>
+</body>
+</html> 

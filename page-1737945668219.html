@@ -1,0 +1,1489 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      
+       <title>{{project.seoTitle}}</title>
+      <!-- SEO Description -->
+      <meta name="description" content="{{project.seoDescription}}">
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" as="style">
+      
+      <!-- {headerScripts} -->
+
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+             colors: {
+                primary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Dynamic Meta Tags -->
+      <meta name="description" content="{{project.meta.ogDescription}}">
+      <meta name="keywords" content="{{project.meta.keywords}}">
+      <meta name="robots" content="{{project.meta.robotsMeta}}">
+      <meta name="google-site-verification" content="{{project.meta.googleVerification}}">
+      <meta name="baidu-verification" content="{{project.meta.baiduVerification}}">
+      <meta name="yandex-verification" content="{{project.meta.yandexVerification}}">
+      <meta name="bing-verification" content="{{project.meta.bingVerification}}">
+      <meta property="og:title" content="{{project.meta.ogTitle}}">
+      <meta property="og:description" content="{{project.meta.ogDescription}}">
+      <meta property="og:image" content="{{project.meta.ogImage}}">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="{{project.name}}">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="{{project.meta.ogTitle}}">
+      <meta name="twitter:description" content="{{project.meta.ogDescription}}">
+      <meta name="twitter:image" content="{{project.meta.ogImage}}">
+
+      <!-- Base Styles -->
+      <style>
+      * {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Webkit browsers like Chrome, Safari, newer Edge */
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+          width: 0px;
+        }
+        
+        ::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+          background: #888;
+          border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+          background: #666;
+        }
+
+        /* Remove tap highlight on mobile */
+        * {
+          -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Improve text rendering */
+        body {
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Focus outline styles */
+        :focus-visible {
+          outline: 2px solid currentColor;
+          outline-offset: 2px;
+        }
+
+        /* Print styles */
+        @media print {
+          .no-print {
+            display: none !important;
+          }
+          
+          a[href]:after {
+            content: " (" attr(href) ")";
+          }
+        }
+      </style>
+
+      <!-- Enhanced Image Handler -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const img = entry.target;
+                if (img.dataset.src) {
+                  const tempImage = new Image();
+                  tempImage.onload = () => {
+                    img.src = img.dataset.src;
+                    img.classList.remove('opacity-0');
+                    img.classList.add('opacity-100');
+                  };
+                  tempImage.src = img.dataset.src;
+                  img.removeAttribute('data-src');
+                  observer.unobserve(img);
+                }
+              }
+            });
+          }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+          });
+
+          const loadImage = (img) => {
+            if ('loading' in HTMLImageElement.prototype) {
+              img.loading = 'lazy';
+            }
+            
+            img.classList.add('transition-opacity', 'duration-300', 'opacity-0');
+            
+            img.onerror = () => {
+              const width = img.getAttribute('width') || img.clientWidth || 300;
+              const height = img.getAttribute('height') || img.clientHeight || 200;
+              img.src = `https://placehold.co/${width}x${height}/DEDEDE/555555?text=Image+Unavailable`;
+              img.alt = 'Image unavailable';
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100', 'error-image');
+            };
+
+            if (img.dataset.src) {
+              imageObserver.observe(img);
+            } else {
+              img.classList.remove('opacity-0');
+              img.classList.add('opacity-100');
+            }
+          };
+
+          document.querySelectorAll('img[data-src], img:not([data-src])').forEach(loadImage);
+
+          // Watch for dynamically added images
+          new MutationObserver((mutations) => {
+            mutations.forEach(mutation => {
+              mutation.addedNodes.forEach(node => {
+                if (node.nodeType === 1) {
+                  if (node.tagName === 'IMG') {
+                    loadImage(node);
+                  }
+                  node.querySelectorAll('img').forEach(loadImage);
+                }
+              });
+            });
+          }).observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        });
+
+        // Performance monitoring
+        if ('performance' in window && 'PerformanceObserver' in window) {
+          // Create performance observer
+          const observer = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            entries.forEach((entry) => {
+              if (entry.entryType === 'largest-contentful-paint') {
+                // console.log(`LCP: ${entry.startTime}ms`);
+              }
+              if (entry.entryType === 'first-input') {
+                // console.log(`FID: ${entry.processingStart - entry.startTime}ms`);
+              }
+              if (entry.entryType === 'layout-shift') {
+                // console.log(`CLS: ${entry.value}`);
+              }
+            });
+          });
+
+          // Observe performance metrics
+          observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
+
+          // Log basic performance metrics
+          window.addEventListener('load', () => {
+            const timing = performance.getEntriesByType('navigation')[0];
+            console.log({
+              'DNS Lookup': timing.domainLookupEnd - timing.domainLookupStart,
+              'TCP Connection': timing.connectEnd - timing.connectStart,
+              'DOM Content Loaded': timing.domContentLoadedEventEnd - timing.navigationStart,
+              'Page Load': timing.loadEventEnd - timing.navigationStart
+            });
+          });
+        }
+
+        // Handle offline/online status
+        window.addEventListener('online', () => {
+          document.body.classList.remove('offline');
+          console.log('Connection restored');
+        });
+        
+        window.addEventListener('offline', () => {
+          document.body.classList.add('offline');
+          console.log('Connection lost');
+        });
+      </script>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Header -->
+      <header class="relative z-50 bg-white dark:bg-gray-900">
+        <!-- Header content goes here -->
+      </header>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative ">
+        <!-- Content will be injected here -->
+      </main>
+
+      <!-- {bodyScripts} -->
+
+   </body>
+</html><element id="382f7d4d-e219-4592-8215-4bebbf26015b" data-section-id="382f7d4d-e219-4592-8215-4bebbf26015b">
+
+<htmlCode>
+<div id="root">
+    <nav id="navbar" class="fixed w-full z-50 bg-neutral-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold animate__animated animate__fadeIn">
+                        ContentGen Pro
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#hero" class="hover:bg-neutral-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#features" class="hover:bg-neutral-700 px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                        <a href="#titleGenerator" class="hover:bg-neutral-700 px-3 py-2 rounded-md text-sm font-medium">Title Generator</a>
+                        <a href="#hashtagGenerator" class="hover:bg-neutral-700 px-3 py-2 rounded-md text-sm font-medium">Hashtag Generator</a>
+                        <a href="#thumbnailGenerator" class="hover:bg-neutral-700 px-3 py-2 rounded-md text-sm font-medium">Thumbnail Generator</a>
+                        <a href="#pricing" class="hover:bg-neutral-700 px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-neutral-700 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-neutral-900">
+                <a href="#hero" class="block hover:bg-neutral-700 px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#features" class="block hover:bg-neutral-700 px-3 py-2 rounded-md text-base font-medium">Features</a>
+                <a href="#titleGenerator" class="block hover:bg-neutral-700 px-3 py-2 rounded-md text-base font-medium">Title Generator</a>
+                <a href="#hashtagGenerator" class="block hover:bg-neutral-700 px-3 py-2 rounded-md text-base font-medium">Hashtag Generator</a>
+                <a href="#thumbnailGenerator" class="block hover:bg-neutral-700 px-3 py-2 rounded-md text-base font-medium">Thumbnail Generator</a>
+                <a href="#pricing" class="block hover:bg-neutral-700 px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Add smooth scrolling to nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</div>
+</htmlCode></element><element id="31f3e9d7-d620-491c-8f04-2cb2a03536b6" data-section-id="31f3e9d7-d620-491c-8f04-2cb2a03536b6">
+
+<htmlCode>
+<div id="root">
+    <section id="hero" class="min-h-screen bg-neutral-900 text-white pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between py-20">
+            <div class="lg:w-1/2 space-y-8 animate__animated animate__fadeInLeft">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                    Generate Viral Content<br/>
+                    <span class="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+                        In Seconds
+                    </span>
+                </h1>
+                <p class="text-xl text-gray-300">
+                    Create viral YouTube titles, thumbnails, hashtags, and descriptions using AI-powered tools. Optimize your content for maximum engagement.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-8 rounded-full transform hover:scale-105 transition-all animate__animated animate__pulse animate__infinite">
+                        Get Started Free
+                    </button>
+                    <button class="border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white font-bold py-3 px-8 rounded-full transform hover:scale-105 transition-all">
+                        Watch Demo
+                    </button>
+                </div>
+                <div class="flex items-center gap-4 text-sm text-gray-400">
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        No Credit Card Required
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        AI-Powered Results
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 mt-12 lg:mt-0 animate__animated animate__fadeInRight">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 blur-3xl opacity-30 rounded-3xl"></div>
+                    <div class="relative bg-neutral-800 p-8 rounded-3xl shadow-2xl">
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-2 text-sm">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="bg-neutral-700 p-4 rounded-lg">
+                                    <p class="text-gray-400">Generate viral titles, hashtags & more...</p>
+                                </div>
+                                <div class="typing-animation bg-purple-500 w-24 h-6 rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        @keyframes typing {
+            0% { width: 0; }
+            50% { width: 24px; }
+            100% { width: 0; }
+        }
+        .typing-animation {
+            animation: typing 2s infinite;
+        }
+        .text-gradient {
+            background-size: 200% 200%;
+            animation: gradient 4s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</div>
+</htmlCode></element><element id="50de1c4d-ae20-42f1-9cae-be47622601d3" data-section-id="50de1c4d-ae20-42f1-9cae-be47622601d3">
+
+<htmlCode>
+<div id="root">
+    <section id="features" class="py-20 bg-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate__animated animate__fadeIn">
+                <h2 class="text-4xl font-bold text-white mb-4">Powerful Content Generation Tools</h2>
+                <p class="text-gray-400 text-xl">All-in-one platform for creating viral YouTube content</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-neutral-700 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 animate__animated animate__fadeInUp">
+                    <div class="bg-purple-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Title Generator</h3>
+                    <p class="text-gray-400">Create attention-grabbing, SEO-optimized video titles that drive clicks and views.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-neutral-700 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="bg-pink-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Hashtag Generator</h3>
+                    <p class="text-gray-400">Generate trending hashtags that increase your video's visibility and reach.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-neutral-700 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                    <div class="bg-blue-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Thumbnail Creator</h3>
+                    <p class="text-gray-400">Design eye-catching thumbnails that boost click-through rates instantly.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-neutral-700 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">
+                    <div class="bg-green-500 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Description Generator</h3>
+                    <p class="text-gray-400">Create SEO-friendly descriptions that rank higher in search results.</p>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <button class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-8 rounded-full transform hover:scale-105 transition-all animate__animated animate__pulse animate__infinite">
+                    Try All Features Now
+                </button>
+            </div>
+        </div>
+    </section>
+</div>
+</htmlCode></element><element id="ccafa69b-f1b7-4dae-bedc-d1b4976e0f5a" data-section-id="ccafa69b-f1b7-4dae-bedc-d1b4976e0f5a">
+
+<htmlCode>
+<div id="root">
+    <section id="titleGenerator" class="py-20 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate__animated animate__fadeIn">
+                <h2 class="text-4xl font-bold text-white mb-4">YouTube Title Generator</h2>
+                <p class="text-gray-400 text-xl">Create attention-grabbing, viral video titles in seconds</p>
+            </div>
+
+            <div class="bg-neutral-800 rounded-2xl p-8 shadow-2xl animate__animated animate__fadeInUp">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <label class="block text-white text-sm font-medium">Enter your topic or keywords</label>
+                            <input type="text" id="titleInput" class="w-full bg-neutral-700 border border-neutral-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="e.g., iPhone review, cooking tutorial, gaming tips">
+                            
+                            <label class="block text-white text-sm font-medium">Select Content Style</label>
+                            <select id="titleStyle" class="w-full bg-neutral-700 border border-neutral-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                <option value="viral">Viral/Trending</option>
+                                <option value="howto">How-To Tutorial</option>
+                                <option value="review">Product Review</option>
+                                <option value="listicle">Top 10 List</option>
+                            </select>
+
+                            <button onclick="generateTitles()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-6 rounded-lg transform hover:scale-105 transition-all">
+                                Generate Titles
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-white font-medium">Generated Titles</h3>
+                        <div id="titleResults" class="bg-neutral-700 rounded-lg p-4 min-h-[200px] space-y-3">
+                            <div class="animate-pulse space-y-3">
+                                <div class="h-4 bg-neutral-600 rounded w-3/4"></div>
+                                <div class="h-4 bg-neutral-600 rounded w-1/2"></div>
+                                <div class="h-4 bg-neutral-600 rounded w-2/3"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-400">
+                            <span>Click on any title to copy</span>
+                            <span id="titleCount">0/5 generated</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function generateTitles() {
+            const input = document.getElementById('titleInput').value;
+            const style = document.getElementById('titleStyle').value;
+            const resultsDiv = document.getElementById('titleResults');
+            
+            // Show loading state
+            resultsDiv.innerHTML = `
+                <div class="animate-pulse space-y-3">
+                    <div class="h-4 bg-neutral-600 rounded w-3/4"></div>
+                    <div class="h-4 bg-neutral-600 rounded w-1/2"></div>
+                    <div class="h-4 bg-neutral-600 rounded w-2/3"></div>
+                </div>
+            `;
+
+            // Simulate API call with setTimeout
+            setTimeout(() => {
+                const sampleTitles = [
+                    `🔥 ${input} - You Won't Believe What Happened!`,
+                    `The TRUTH About ${input} in 2024`,
+                    `How I Made ${input} Work (SHOCKING RESULTS)`,
+                    `${input} Secrets Revealed | MUST WATCH ✨`,
+                    `Top 10 ${input} Hacks You Need To Know`
+                ];
+
+                resultsDiv.innerHTML = sampleTitles.map(title => `
+                    <div class="bg-neutral-600 p-3 rounded cursor-pointer hover:bg-neutral-500 transition-all" 
+                         onclick="copyToClipboard('${title}')">
+                        ${title}
+                    </div>
+                `).join('');
+
+                document.getElementById('titleCount').textContent = '5/5 generated';
+            }, 1500);
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Show success notification
+                const notification = document.createElement('div');
+                notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg animate__animated animate__fadeIn';
+                notification.textContent = 'Copied to clipboard!';
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    notification.classList.add('animate__fadeOut');
+                    setTimeout(() => notification.remove(), 1000);
+                }, 2000);
+            });
+        }
+    </script>
+</div>
+</htmlCode></element><element id="fd36980f-7eb7-4bdd-b8a4-ecc56c13f422" data-section-id="fd36980f-7eb7-4bdd-b8a4-ecc56c13f422">
+
+<htmlCode>
+<div id="root">
+    <section id="hashtagGenerator" class="py-20 bg-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate__animated animate__fadeIn">
+                <h2 class="text-4xl font-bold text-white mb-4">Hashtag Generator</h2>
+                <p class="text-gray-400 text-xl">Generate trending hashtags to boost your video's reach</p>
+            </div>
+
+            <div class="bg-neutral-900 rounded-2xl p-8 shadow-2xl animate__animated animate__fadeInUp">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <label class="block text-white text-sm font-medium">Enter your video topic</label>
+                            <input type="text" id="hashtagInput" class="w-full bg-neutral-700 border border-neutral-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="e.g., gaming, cooking, tech review">
+
+                            <div class="flex gap-4">
+                                <div class="w-1/2">
+                                    <label class="block text-white text-sm font-medium">Number of hashtags</label>
+                                    <select id="hashtagCount" class="w-full bg-neutral-700 border border-neutral-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                        <option value="5">5 hashtags</option>
+                                        <option value="10">10 hashtags</option>
+                                        <option value="15">15 hashtags</option>
+                                    </select>
+                                </div>
+                                <div class="w-1/2">
+                                    <label class="block text-white text-sm font-medium">Category</label>
+                                    <select id="hashtagCategory" class="w-full bg-neutral-700 border border-neutral-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                        <option value="trending">Trending</option>
+                                        <option value="niche">Niche-specific</option>
+                                        <option value="mixed">Mixed</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button onclick="generateHashtags()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-6 rounded-lg transform hover:scale-105 transition-all">
+                                Generate Hashtags
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-white font-medium">Generated Hashtags</h3>
+                        <div id="hashtagResults" class="bg-neutral-700 rounded-lg p-4 min-h-[200px]">
+                            <div class="animate-pulse space-y-3">
+                                <div class="h-4 bg-neutral-600 rounded w-3/4"></div>
+                                <div class="h-4 bg-neutral-600 rounded w-1/2"></div>
+                                <div class="h-4 bg-neutral-600 rounded w-2/3"></div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-400">Click copy button to copy all</span>
+                            <button id="copyAllHashtags" class="text-purple-500 hover:text-purple-400 font-medium text-sm flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                                </svg>
+                                Copy All
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function generateHashtags() {
+            const input = document.getElementById('hashtagInput').value;
+            const count = document.getElementById('hashtagCount').value;
+            const category = document.getElementById('hashtagCategory').value;
+            const resultsDiv = document.getElementById('hashtagResults');
+            
+            // Show loading state
+            resultsDiv.innerHTML = `
+                <div class="animate-pulse space-y-3">
+                    <div class="h-4 bg-neutral-600 rounded w-3/4"></div>
+                    <div class="h-4 bg-neutral-600 rounded w-1/2"></div>
+                    <div class="h-4 bg-neutral-600 rounded w-2/3"></div>
+                </div>
+            `;
+
+            // Simulate API call
+            setTimeout(() => {
+                const hashtags = [
+                    `#${input}`,
+                    `#${input}Tutorial`,
+                    `#${input}Tips`,
+                    `#${input}2024`,
+                    `#${input}Community`,
+                    `#Viral${input}`,
+                    `#${input}Life`,
+                    `#${input}Trending`,
+                    `#Best${input}`,
+                    `#${input}Content`
+                ];
+
+                resultsDiv.innerHTML = `
+                    <div class="space-y-4">
+                        ${hashtags.slice(0, count).map(tag => `
+                            <span class="inline-block bg-neutral-600 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 cursor-pointer hover:bg-neutral-500 transition-all" onclick="copyHashtag('${tag}')">${tag}</span>
+                        `).join('')}
+                    </div>
+                `;
+            }, 1500);
+        }
+
+        function copyHashtag(hashtag) {
+            navigator.clipboard.writeText(hashtag).then(() => {
+                showNotification('Hashtag copied!');
+            });
+        }
+
+        document.getElementById('copyAllHashtags').addEventListener('click', () => {
+            const hashtags = Array.from(document.querySelectorAll('#hashtagResults span'))
+                .map(span => span.textContent)
+                .join(' ');
+            
+            navigator.clipboard.writeText(hashtags).then(() => {
+                showNotification('All hashtags copied!');
+            });
+        });
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg animate__animated animate__fadeIn';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('animate__fadeOut');
+                setTimeout(() => notification.remove(), 1000);
+            }, 2000);
+        }
+    </script>
+</div>
+</htmlCode></element><element id="064f3101-d63f-4dad-931f-c373bd2ef902" data-section-id="064f3101-d63f-4dad-931f-c373bd2ef902">
+
+<htmlCode>
+<div id="root">
+    <section id="thumbnailGenerator" class="py-20 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate__animated animate__fadeIn">
+                <h2 class="text-4xl font-bold text-white mb-4">Thumbnail Generator</h2>
+                <p class="text-gray-400 text-xl">Create eye-catching thumbnails that drive clicks</p>
+            </div>
+
+            <div class="bg-neutral-800 rounded-2xl p-8 shadow-2xl animate__animated animate__fadeInUp">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <label class="block text-white text-sm font-medium">Upload Background Image</label>
+                            <div class="border-2 border-dashed border-neutral-600 rounded-lg p-6 text-center cursor-pointer hover:border-purple-500 transition-all" id="dropZone">
+                                <input type="file" id="imageUpload" class="hidden" accept="image/*">
+                                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                <p class="mt-1 text-sm text-gray-400">Drag and drop or click to upload</p>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-white text-sm font-medium">Text Style</label>
+                                    <select id="textStyle" class="w-full bg-neutral-700 border border-neutral-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                        <option value="bold">Bold Impact</option>
+                                        <option value="minimal">Minimal Clean</option>
+                                        <option value="gradient">Gradient Text</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-white text-sm font-medium">Layout</label>
+                                    <select id="thumbnailLayout" class="w-full bg-neutral-700 border border-neutral-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                        <option value="centered">Centered</option>
+                                        <option value="left">Left Aligned</option>
+                                        <option value="split">Split Screen</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-white text-sm font-medium">Thumbnail Text</label>
+                                <input type="text" id="thumbnailText" class="w-full bg-neutral-700 border border-neutral-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Enter main text for thumbnail">
+                            </div>
+
+                            <button onclick="generateThumbnail()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-6 rounded-lg transform hover:scale-105 transition-all">
+                                Generate Thumbnail
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="text-white font-medium">Preview</h3>
+                        <div id="thumbnailPreview" class="bg-neutral-700 rounded-lg p-4 aspect-video flex items-center justify-center">
+                            <p class="text-gray-400">Your thumbnail preview will appear here</p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button id="downloadThumbnail" class="bg-neutral-700 text-white px-4 py-2 rounded-lg hover:bg-neutral-600 transition-all flex items-center gap-2" disabled>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                </svg>
+                                Download
+                            </button>
+                            <div class="text-sm text-gray-400">1280 x 720px</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const dropZone = document.getElementById('dropZone');
+        const imageUpload = document.getElementById('imageUpload');
+        const thumbnailPreview = document.getElementById('thumbnailPreview');
+        const downloadBtn = document.getElementById('downloadThumbnail');
+
+        dropZone.addEventListener('click', () => imageUpload.click());
+        
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('border-purple-500');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('border-purple-500');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('border-purple-500');
+            const file = e.dataTransfer.files[0];
+            handleImage(file);
+        });
+
+        imageUpload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            handleImage(file);
+        });
+
+        function handleImage(file) {
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    thumbnailPreview.innerHTML = `
+                        <img src="${e.target.result}" class="max-w-full max-h-full rounded-lg" alt="Thumbnail preview">
+                    `;
+                    downloadBtn.disabled = false;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function generateThumbnail() {
+            const text = document.getElementById('thumbnailText').value;
+            const style = document.getElementById('textStyle').value;
+            const layout = document.getElementById('thumbnailLayout').value;
+            
+            // Add thumbnail generation logic here
+            showNotification('Thumbnail generated successfully!');
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg animate__animated animate__fadeIn';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('animate__fadeOut');
+                setTimeout(() => notification.remove(), 1000);
+            }, 2000);
+        }
+    </script>
+</div>
+</htmlCode></element><element id="11aeafb6-6ed6-4a20-8a2e-10c802f1dddb" data-section-id="11aeafb6-6ed6-4a20-8a2e-10c802f1dddb">
+
+<htmlCode>
+<div id="root">
+  <section id="descriptionGenerator" class="min-h-screen bg-neutral-900 text-white py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+          Description Generator
+        </h2>
+        <p class="text-neutral-300">Generate engaging video descriptions in seconds</p>
+      </div>
+
+      <div class="bg-neutral-800 rounded-xl p-6 shadow-lg">
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-neutral-300 mb-2">Video Topic/Keywords</label>
+            <input type="text" class="w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter your video topic or keywords">
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-neutral-300 mb-2">Tone</label>
+            <select class="w-full px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+              <option value="professional">Professional</option>
+              <option value="casual">Casual</option>
+              <option value="funny">Funny</option>
+              <option value="educational">Educational</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-neutral-300 mb-2">Length</label>
+            <div class="flex gap-4">
+              <button class="flex-1 px-4 py-2 bg-neutral-700 rounded-lg hover:bg-neutral-600 transition">Short</button>
+              <button class="flex-1 px-4 py-2 bg-neutral-700 rounded-lg hover:bg-neutral-600 transition">Medium</button>
+              <button class="flex-1 px-4 py-2 bg-neutral-700 rounded-lg hover:bg-neutral-600 transition">Long</button>
+            </div>
+          </div>
+
+          <button class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 rounded-lg hover:opacity-90 transition">
+            Generate Description
+          </button>
+
+          <div class="mt-6">
+            <label class="block text-sm font-medium text-neutral-300 mb-2">Generated Description</label>
+            <textarea class="w-full h-48 px-4 py-3 bg-neutral-700 border border-neutral-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none" readonly></textarea>
+            <div class="flex justify-end mt-2">
+              <button class="px-4 py-2 text-sm bg-neutral-700 rounded-lg hover:bg-neutral-600 transition">
+                Copy to Clipboard
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="61c7fd7f-dcfa-489d-85ab-e4b988dc8021" data-section-id="61c7fd7f-dcfa-489d-85ab-e4b988dc8021">
+
+<htmlCode>
+<div id="root">
+    <section id="howItWorks" class="py-20 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate__animated animate__fadeIn">
+                <h2 class="text-4xl font-bold text-white mb-4">How It Works</h2>
+                <p class="text-gray-400 text-xl">Simple 3-step process to generate viral content</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-neutral-800 rounded-xl p-8 text-center transform hover:scale-105 transition-all duration-300 animate__animated animate__fadeInUp">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-white">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Enter Your Topic</h3>
+                    <p class="text-gray-400">Input your video topic or keywords into our AI-powered generator</p>
+                    <div class="mt-6">
+                        <svg class="w-12 h-12 text-purple-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-neutral-800 rounded-xl p-8 text-center transform hover:scale-105 transition-all duration-300 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-white">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Customize Options</h3>
+                    <p class="text-gray-400">Select your preferred style, tone, and content parameters</p>
+                    <div class="mt-6">
+                        <svg class="w-12 h-12 text-purple-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-neutral-800 rounded-xl p-8 text-center transform hover:scale-105 transition-all duration-300 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-white">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Generate & Use</h3>
+                    <p class="text-gray-400">Get instant results and copy your optimized content</p>
+                    <div class="mt-6">
+                        <svg class="w-12 h-12 text-purple-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center animate__animated animate__fadeIn">
+                <button class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-4 px-8 rounded-full transform hover:scale-105 transition-all inline-flex items-center gap-2">
+                    Get Started Now
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </button>
+                <p class="mt-4 text-gray-400">No credit card required - Start generating in seconds</p>
+            </div>
+        </div>
+    </section>
+</div>
+</htmlCode></element><element id="c30e169c-5252-4664-9c77-d282f783178d" data-section-id="c30e169c-5252-4664-9c77-d282f783178d">
+
+<htmlCode>
+<div id="root">
+    <section id="pricing" class="py-20 bg-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate__animated animate__fadeIn">
+                <h2 class="text-4xl font-bold text-white mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-gray-400 text-xl">Choose the perfect plan for your content creation needs</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Free Plan -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-700 hover:border-purple-500 transition-all duration-300 animate__animated animate__fadeInUp">
+                    <div class="text-center mb-8">
+                        <h3 class="text-xl font-bold text-white mb-4">Free</h3>
+                        <div class="flex justify-center items-baseline">
+                            <span class="text-5xl font-extrabold text-white">$0</span>
+                            <span class="text-gray-400 ml-1">/month</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            5 Titles per day
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            10 Hashtags per day
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Basic templates
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 px-6 rounded-lg border border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white transition-all duration-300">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border-2 border-purple-500 transform scale-105 animate__animated animate__fadeInUp relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-1 rounded-full text-sm">Most Popular</span>
+                    </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-xl font-bold text-white mb-4">Pro</h3>
+                        <div class="flex justify-center items-baseline">
+                            <span class="text-5xl font-extrabold text-white">$19</span>
+                            <span class="text-gray-400 ml-1">/month</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Unlimited Titles
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Unlimited Hashtags
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Custom Thumbnails
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Priority Support
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white transition-all duration-300">
+                        Get Started
+                    </button>
+                </div>
+
+                <!-- Business Plan -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-700 hover:border-purple-500 transition-all duration-300 animate__animated animate__fadeInUp">
+                    <div class="text-center mb-8">
+                        <h3 class="text-xl font-bold text-white mb-4">Business</h3>
+                        <div class="flex justify-center items-baseline">
+                            <span class="text-5xl font-extrabold text-white">$49</span>
+                            <span class="text-gray-400 ml-1">/month</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Everything in Pro
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            API Access
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Custom Branding
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Dedicated Support
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 px-6 rounded-lg border border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white transition-all duration-300">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+</htmlCode></element><element id="2e00d17d-afe3-493b-9943-197326d99447" data-section-id="2e00d17d-afe3-493b-9943-197326d99447">
+
+<htmlCode>
+<div id="root">
+  <section id="testimonials" class="min-h-screen bg-neutral-900 text-white py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+          What Creators Say
+        </h2>
+        <p class="text-neutral-300">Join thousands of satisfied content creators</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-neutral-800 rounded-xl p-8 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+              <span class="text-xl font-bold">R</span>
+            </div>
+            <div class="ml-4">
+              <h3 class="font-semibold">Rahul Kumar</h3>
+              <p class="text-sm text-neutral-400">Tech YouTuber</p>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="flex text-yellow-400">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            </div>
+          </div>
+          <p class="text-neutral-300">"मेरी चैनल की ग्रोथ बढ़ाने में बहुत मदद मिली। अब viral titles और hashtags generate करना बहुत आसान हो गया है।"</p>
+        </div>
+
+        <div class="bg-neutral-800 rounded-xl p-8 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+              <span class="text-xl font-bold">P</span>
+            </div>
+            <div class="ml-4">
+              <h3 class="font-semibold">Priya Singh</h3>
+              <p class="text-sm text-neutral-400">Lifestyle Vlogger</p>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="flex text-yellow-400">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            </div>
+          </div>
+          <p class="text-neutral-300">"Thumbnail generator ने मेरे videos को professional look दिया है। Best tool for content creators!"</p>
+        </div>
+
+        <div class="bg-neutral-800 rounded-xl p-8 hover:shadow-xl transition-all duration-300">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+              <span class="text-xl font-bold">A</span>
+            </div>
+            <div class="ml-4">
+              <h3 class="font-semibold">Amit Sharma</h3>
+              <p class="text-sm text-neutral-400">Gaming Creator</p>
+            </div>
+          </div>
+          <div class="mb-4">
+            <div class="flex text-yellow-400">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            </div>
+          </div>
+          <p class="text-neutral-300">"Time saving tool है। एक click में perfect hashtags और descriptions मिल जाते हैं।"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="e3477613-13c7-4070-87a7-7f2da1a9ff8c" data-section-id="e3477613-13c7-4070-87a7-7f2da1a9ff8c">
+
+<htmlCode>
+<div id="root">
+  <section id="faq" class="min-h-screen bg-neutral-900 text-white py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-neutral-300">Get answers to common questions about our content generation tools</p>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-neutral-800 rounded-xl overflow-hidden">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-neutral-700 transition-colors duration-200">
+            <span class="font-semibold">कैसे काम करता है यह Tool?</span>
+            <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="px-6 py-4 border-t border-neutral-700">
+            <p class="text-neutral-300">हमारा AI-powered tool आपके keywords के आधार पर trending hashtags, viral titles और descriptions generate करता है। Google Gems technology का use करके best results देता है।</p>
+          </div>
+        </div>
+
+        <div class="bg-neutral-800 rounded-xl overflow-hidden">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-neutral-700 transition-colors duration-200">
+            <span class="font-semibold">क्या मैं free में use कर सकता/सकती हूं?</span>
+            <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="px-6 py-4 border-t border-neutral-700">
+            <p class="text-neutral-300">हां, basic features free में available हैं। Advanced features के लिए हमारे premium plans का use कर सकते हैं।</p>
+          </div>
+        </div>
+
+        <div class="bg-neutral-800 rounded-xl overflow-hidden">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-neutral-700 transition-colors duration-200">
+            <span class="font-semibold">Thumbnails की quality कैसी होगी?</span>
+            <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="px-6 py-4 border-t border-neutral-700">
+            <p class="text-neutral-300">हमारे thumbnails HD quality में generate होते हैं (1280x720px) और YouTube standards के according होते हैं।</p>
+          </div>
+        </div>
+
+        <div class="bg-neutral-800 rounded-xl overflow-hidden">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-neutral-700 transition-colors duration-200">
+            <span class="font-semibold">एक दिन में कितने titles generate कर सकते हैं?</span>
+            <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="px-6 py-4 border-t border-neutral-700">
+            <p class="text-neutral-300">Free plan में 5 titles per day, Pro plan में 50 titles per day और Premium plan में unlimited titles generate कर सकते हैं।</p>
+          </div>
+        </div>
+
+        <div class="bg-neutral-800 rounded-xl overflow-hidden">
+          <button class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-neutral-700 transition-colors duration-200">
+            <span class="font-semibold">क्या customer support available है?</span>
+            <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="px-6 py-4 border-t border-neutral-700">
+            <p class="text-neutral-300">हां, हमारी dedicated support team 24/7 available है। Premium users को priority support मिलती है।</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-neutral-400">Still have questions? <a href="#contact" class="text-blue-400 hover:text-blue-300">Contact us</a></p>
+      </div>
+    </div>
+  </section>
+</div>
+</htmlCode></element><element id="e8b9f20e-2a3e-4a54-85d8-51aec677bab6" data-section-id="e8b9f20e-2a3e-4a54-85d8-51aec677bab6">
+
+
+                <htmlcode id="el-hpkjvzse">
+<div id="root">
+  <footer id="footer" class="bg-neutral-900 text-white pt-16 pb-8">
+    <div class="max-w-6xl mx-auto px-4" id="el-fwwasjvc">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-neutral-800" id="el-2yjvdbu6">
+        <div class="space-y-4" id="el-r305pxij">
+          <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent" id="el-3x0hhfzo">
+            Content Generator
+          </h3>
+          <p class="text-neutral-400" id="el-no0r42h4">
+            Powerful AI-driven content generation tools for modern content creators.
+          </p>
+          <div class="flex space-x-4" id="el-r7gjskuy">
+            <a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-f1x4xx88">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" id="el-w69wcezi">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" id="el-chf2huoy"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-z2reo23d">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" id="el-6480m3d3">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" id="el-bqquu9wn"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-opxq7q56">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" id="el-7bybzgse">
+                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" id="el-q2b2z7xb"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-4" id="el-lc4rmdyc">
+          <h4 class="font-semibold text-lg" id="el-t1wk7bxk">Features</h4>
+          <ul class="space-y-2" id="el-rfrxs3y5">
+            <li id="el-pzyc1v8j"><a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-kc45jcwl">Title Generator</a></li>
+            <li id="el-p6uwwho1"><a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-1w7y5n8n">Hashtag Generator</a></li>
+            <li id="el-zp6q8w2b"><a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-trx42zmu">Thumbnail Creator</a></li>
+            <li id="el-p4ejwyy5"><a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-apaomu7e">Description Writer</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-4" id="el-r87g1mxe">
+          <h4 class="font-semibold text-lg" id="el-r7hnlxfy">Company</h4>
+          <ul class="space-y-2" id="el-kwzg6atn">
+            <li id="el-bmbohdbv"><a href="#" class="text-neutral-400 hover:text-white transition-colors duration-300 flex items-center gap-2 font-medium" id="el-k5isz264">
+    <span>About Us</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    </svg>
+</a></li>
+            <li id="el-pg4ntbn1"><a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-sc08k8tc">Privacy Policy</a></li>
+            <li id="el-wsvxnhjv"><a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-weod4aw2">Terms of Service</a></li>
+            <li id="el-wqjuwj2m"><a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-ydpfl48p">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-4" id="el-mrjihujo">
+          <h4 class="font-semibold text-lg" id="el-t6rpuze9">Support</h4>
+          <ul class="space-y-2" id="el-6rqcjkdh">
+            <li id="el-loiyspnx"><a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-pf0yqt2z">Help Center</a></li>
+            <li id="el-ijwamb3b"><a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-0oib2cci">Documentation</a></li>
+            <li id="el-iad0rkyv"><a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-ytokugyb">API Status</a></li>
+            <li id="el-4xpimo6h"><a href="#" class="text-neutral-400 hover:text-white transition-colors" id="el-jnlolhp4">Updates</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 text-center" id="el-5ec6kxlw">
+        <p class="text-neutral-400 text-sm" id="el-oamuogqi">
+          © 2024 Content Generator. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+</htmlcode>
+              </element>
+            <div id="page_complete">
+            <script>
+                console.log('Page complete');
+            </script>
+            </body>
+            </html>
+          

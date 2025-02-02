@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Script Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-indigo-500 to-purple-500 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-xl font-bold text-gray-800">Content Tools</a>
+                <div class="space-x-4">
+                    <a href="title-generator.html" class="text-gray-600 hover:text-red-600">Title Generator</a>
+                    <a href="thumbnail-generator.html" class="text-gray-600 hover:text-yellow-600">Thumbnail Generator</a>
+                    <a href="script-generator.html" class="text-indigo-600 font-semibold">Script Generator</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Script Generator Form -->
+            <div class="bg-white rounded-xl shadow-xl p-6 mb-8">
+                <h1 class="text-3xl font-bold text-center mb-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-transparent bg-clip-text">
+                    Video Script Generator
+                </h1>
+                <p class="text-center text-gray-600 mb-8">Create engaging video scripts in minutes</p>
+
+                <!-- Script Details -->
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Video Topic</label>
+                        <input type="text" id="videoTopic" 
+                            class="w-full px-4 py-2 border rounded-lg"
+                            placeholder="Enter your video topic">
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Content Type</label>
+                            <select id="contentType" class="w-full px-4 py-2 border rounded-lg">
+                                <option value="tutorial">Tutorial</option>
+                                <option value="review">Review</option>
+                                <option value="vlog">Vlog</option>
+                                <option value="educational">Educational</option>
+                                <option value="entertainment">Entertainment</option>
+                                <option value="bugatti">Bugatti Showcase</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Script Style</label>
+                            <select id="scriptStyle" class="w-full px-4 py-2 border rounded-lg">
+                                <option value="normal">Professional/Standard</option>
+                                <option value="comedy">Funny/Entertainment</option>
+                                <option value="romantic">Romantic/Lifestyle</option>
+                                <option value="dramatic">Dramatic/Intense</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold mb-2">Language</label>
+                            <select id="scriptLanguage" class="w-full px-4 py-2 border rounded-lg">
+                                <option value="english">English</option>
+                                <option value="hindi">हिंदी</option>
+                                <option value="spanish">Español</option>
+                                <option value="french">Français</option>
+                                <option value="german">Deutsch</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Video Duration</label>
+                        <select id="duration" class="w-full px-4 py-2 border rounded-lg">
+                            <option value="short">Short (2-3 min)</option>
+                            <option value="medium">Medium (5-7 min)</option>
+                            <option value="long">Long (10-20 min)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold mb-2">Key Points (Optional)</label>
+                        <textarea id="keyPoints" 
+                            class="w-full px-4 py-2 border rounded-lg h-24"
+                            placeholder="Enter key points to cover (one per line)"></textarea>
+                    </div>
+
+                    <button onclick="generateScript()" 
+                        class="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition">
+                        Generate Script
+                    </button>
+                </div>
+            </div>
+
+            <!-- Add style preview cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                <div class="p-3 bg-gray-50 rounded-lg text-sm cursor-pointer hover:bg-gray-100" 
+                    onclick="previewStyle('normal')">
+                    <div class="font-bold mb-1">Professional</div>
+                    <div class="text-gray-600">Clear and informative content</div>
+                </div>
+                
+                <div class="p-3 bg-yellow-50 rounded-lg text-sm cursor-pointer hover:bg-yellow-100" 
+                    onclick="previewStyle('comedy')">
+                    <div class="font-bold mb-1">Funny 😂</div>
+                    <div class="text-gray-600">Entertaining and humorous</div>
+                </div>
+                
+                <div class="p-3 bg-pink-50 rounded-lg text-sm cursor-pointer hover:bg-pink-100" 
+                    onclick="previewStyle('romantic')">
+                    <div class="font-bold mb-1">Romantic ✨</div>
+                    <div class="text-gray-600">Warm and heartfelt</div>
+                </div>
+                
+                <div class="p-3 bg-red-50 rounded-lg text-sm cursor-pointer hover:bg-red-100" 
+                    onclick="previewStyle('dramatic')">
+                    <div class="font-bold mb-1">Dramatic 🤯</div>
+                    <div class="text-gray-600">Intense and exciting</div>
+                </div>
+            </div>
+
+            <!-- Generated Script -->
+            <div id="scriptOutput" class="bg-white rounded-xl shadow-xl p-6 hidden">
+                <h2 class="text-2xl font-bold mb-4">Your Video Script</h2>
+                
+                <!-- Script Sections -->
+                <div class="space-y-6">
+                    <!-- Introduction -->
+                    <div>
+                        <h3 class="font-bold text-lg text-indigo-600 mb-2">Introduction</h3>
+                        <div id="introText" class="p-4 bg-gray-50 rounded-lg"></div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div>
+                        <h3 class="font-bold text-lg text-indigo-600 mb-2">Main Content</h3>
+                        <div id="mainContent" class="p-4 bg-gray-50 rounded-lg"></div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div>
+                        <h3 class="font-bold text-lg text-indigo-600 mb-2">Call to Action</h3>
+                        <div id="outroText" class="p-4 bg-gray-50 rounded-lg"></div>
+                    </div>
+
+                    <!-- Export Options -->
+                    <div class="flex space-x-4">
+                        <button onclick="copyScript()" 
+                            class="flex-1 bg-gray-600 text-white py-2 rounded-lg hover:bg-gray-700">
+                            Copy to Clipboard
+                        </button>
+                        <button onclick="downloadScript()" 
+                            class="flex-1 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">
+                            Download Script
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script-generator.js"></script>
+</body>
+</html> 
